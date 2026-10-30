@@ -74,7 +74,7 @@ export const SOCIAL = {
 };
 
 // Smartsupp live chat widget key (public: it ships in the page). Loaded on the public site only by
-// src/services/liveChat.ts. Set to '' to turn the chat off (off for launch: no key for this site yet).
-export const SMARTSUPP_KEY = '';
+// src/services/liveChat.ts. Set to '' to turn the chat off.
+export const SMARTSUPP_KEY = '5a32bb1972bf9efcc00d4ca6a0c21a6ddb5e64d6';
 
 export type SocialNetwork = keyof typeof SOCIAL;

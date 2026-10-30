@@ -119,7 +119,7 @@ confirming, remove this endpoint.**
 - [ ] **No demo data (tracker 6.7).** The production database starts empty; `grep -rn "DEMO DATA" src server` returns
   nothing. Tracking any made-up ID (e.g. `GW7K2M9P`) on the live site says "not found".
 - [ ] Home loads over HTTPS with the **GAW Parcel Delivery logo, name, tagline (Fast • Safe • Worldwide) and tab icon**,
-  and no console errors. No live-chat bubble (chat is off until a key for this site is set in `brand.ts`).
+  and no console errors. The Smartsupp chat bubble appears on public pages (not on `/private-user/`).
 - [ ] `https://www.gawparceldeliveryltd.com/` redirects to `https://gawparceldeliveryltd.com/`; `http://` redirects to `https://`.
 - [ ] `/api/health` returns `ok` with `"service": "GAW Parcel Delivery API"`.
 - [ ] **`https://gawparceldeliveryltd.com/private-user/`** shows the admin login, and the new password works; logout/login works.
@@ -156,5 +156,4 @@ confirming, remove this endpoint.**
   (`npm audit` monthly). Remove `/api/diag/storage` once persistence is confirmed.
 - **Admin sessions** are held in memory (express-session's default store), so every restart or redeploy signs the admin
   out once. That's expected; just log in again.
-- **Live chat:** off for launch. When the owner has a Smartsupp account for this site, set `SMARTSUPP_KEY` in
-  `src/config/brand.ts` (PROMPTS.md Prompt O) and redeploy.
+- **Live chat:** Smartsupp, key in `SMARTSUPP_KEY` (`src/config/brand.ts`). Set it to `''` and redeploy to turn the chat off.
